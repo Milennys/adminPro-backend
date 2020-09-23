@@ -7,18 +7,16 @@ const { db } = require('./db/config');
 //Creando el server de express
 const app = express();
 
-app.use(cors())
+app.use(cors());
+//Lectura y parse de body
+app.use(express.json());
 
 db();
 //KGyymQczTKZ4nfgZ
 //dbMile
 //Rutas
-app.get('/', (req, res) => {
-    res.json({
-        ok: true,
-        msg: 'Hola mundo!'
-    })
-});
+app.use('/api/usuarios', require('./routes/users'))
+app.use('/api/login', require('./routes/auth'))
 
 app.listen(process.env.PORT, () => {
     console.log('Server' + process.env.PORT)
