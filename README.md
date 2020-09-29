@@ -1,1 +1,7 @@
-#Backend Admin-Pro
+# AdminPro - Backend
+
+Recuerden ejecutar 
+
+```
+npm install
+```
